@@ -59,6 +59,15 @@ div.main-content {
     width: 90%;
 }
 
+div.container main-content {
+    background-color: #C0B283;
+    text-align: justify;
+    padding: 0px 30px 30px 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 90%;
+}
+
 .mobile-menu {
     background-color: #DCD0C0;
     padding: 0px;

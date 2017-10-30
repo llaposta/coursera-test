@@ -27,11 +27,11 @@ body {
 }
 
 #main-button:hover {
-    background-color: #f4f4f4;
+    background-color: #373737;
 }
 
 #main-button > .icon-bar {
-    background-color: #DCD0C0;
+    background-color: #f4f4f4;
 }
 
 #bs-example-navbar-collapse-1 {

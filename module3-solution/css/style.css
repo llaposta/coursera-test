@@ -11,7 +11,7 @@ body {
 }
 
 .navbar-custom {
-    background-color: #c0b283;
+    background-color: #DCD0C0;
     border: 0px #373737;
 }
 
@@ -23,7 +23,7 @@ body {
     margin-top: 18px;
     margin-bottom: 18px;
     border-color: #373737;
-    background-color: #DCD0C0;
+    background-color: #c0b283;
 }
 
 #main-button:hover {

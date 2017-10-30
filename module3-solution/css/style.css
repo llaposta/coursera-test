@@ -7,7 +7,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
-    color: #000000;
+    color: #373737;
 }
 
 .navbar-custom {
@@ -79,13 +79,13 @@ div.container main-content {
 }
 
 .navbar-default .mobile-menu .navbar-nav > li {
-    border-bottom: 1px solid #C0B283;
+    border-bottom: 1px solid #373737;
 }
 
 .navbar-default .mobile-menu .navbar-nav > li > a {
-    color: #C0B283;
+    color: #373737;
 }
 
 .navbar-default .mobile-menu .navbar-nav > li > a:hover {
-    color: #C0B283;
+    color: #373737;
 }

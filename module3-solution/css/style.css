@@ -1,0 +1,82 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #08440e;
+}
+
+.navbar-custom {
+    background-color: #c0b283;
+    border: 0px #373737;
+}
+
+.navbar-brand {
+    height: 70px;
+}
+
+#main-button {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    border-color: #373737;
+    background-color: #DCD0C0;
+}
+
+#main-button:hover {
+    background-color: #f4f4f4;
+}
+
+#main-button > .icon-bar {
+    background-color: #DCD0C0;
+}
+
+#bs-example-navbar-collapse-1 {
+    border-color: #373737;
+}
+
+h1.title {
+    margin: 0px;
+    padding: 0px;
+    color: #373737;
+    font-weight: bold;
+}
+
+h3.main-content-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+div.main-content {
+    background-color: #c1edaf;
+    text-align: justify;
+    padding: 0px 30px 30px 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 90%;
+}
+
+.mobile-menu {
+    background-color: #DCD0C0;
+    padding: 0px;
+}
+
+.mobile-menu > ul {
+    margin: 0px;
+    background-color: #DCD0C0;
+}
+
+.navbar-default .mobile-menu .navbar-nav > li {
+    border-bottom: 1px solid #C0B283;
+}
+
+.navbar-default .mobile-menu .navbar-nav > li > a {
+    color: #C0B283;
+}
+
+.navbar-default .mobile-menu .navbar-nav > li > a:hover {
+    color: #C0B283;
+}

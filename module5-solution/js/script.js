@@ -83,21 +83,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
-  homeHtml,
-  function (responseText) {
-    document.querySelector("#main-content")
-      .innerHTML = responseText;
-  },
-  false);
-});
-
-
-dc.loadMenuCategories = function () {
-showLoading("#main-content");
-$ajaxUtils.sendGetRequest(
   allCategoriesUrl,
-  buildAndShowHomeHTML) // ***** <---- TODO: STEP 1: Substitute [...] ******); // Explicitely setting the flag to get JSON from server processed into an object literal
-};
+  buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
+  true); // Explicitely setting the flag to get JSON from server processed into an object literal
+});
 // *** finish **
 
 
@@ -114,7 +103,7 @@ function buildAndShowHomeHTML (categories) {
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
-      var chosenCategoryShortName = chooseRandomCategory (categories);
+      var chosenCategoryShortName = chooseRandomCategory(categories);
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
       // chosen category from STEP 2. Use existing insertProperty function for that purpose.
@@ -128,13 +117,12 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
-     var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", "'"+chosenCategoryShortName["short_name"]+"'");
-
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", "'"+chosenCategoryShortName["short_name"]+"'");
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
-
+      insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
@@ -318,38 +306,3 @@ function buildMenuItemsViewHtml(categoryMenuItems,
   finalHtml += "</section>";
   return finalHtml;
 }
-
-
-// Appends price with '$' if price exists
-function insertItemPrice(html,
-                         pricePropName,
-                         priceValue) {
-  // If not specified, replace with empty string
-  if (!priceValue) {
-    return insertProperty(html, pricePropName, "");
-  }
-
-  priceValue = "$" + priceValue.toFixed(2);
-  html = insertProperty(html, pricePropName, priceValue);
-  return html;
-}
-
-
-// Appends portion name in parens if it exists
-function insertItemPortionName(html,
-                               portionPropName,
-                               portionValue) {
-  // If not specified, return original string
-  if (!portionValue) {
-    return insertProperty(html, portionPropName, "");
-  }
-
-  portionValue = "(" + portionValue + ")";
-  html = insertProperty(html, portionPropName, portionValue);
-  return html;
-}
-
-
-global.$dc = dc;
-
-})(window);

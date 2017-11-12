@@ -306,3 +306,38 @@ function buildMenuItemsViewHtml(categoryMenuItems,
   finalHtml += "</section>";
   return finalHtml;
 }
+
+
+// Appends price with '$' if price exists
+function insertItemPrice(html,
+                         pricePropName,
+                         priceValue) {
+  // If not specified, replace with empty string
+  if (!priceValue) {
+    return insertProperty(html, pricePropName, "");
+  }
+
+  priceValue = "$" + priceValue.toFixed(2);
+  html = insertProperty(html, pricePropName, priceValue);
+  return html;
+}
+
+
+// Appends portion name in parens if it exists
+function insertItemPortionName(html,
+                               portionPropName,
+                               portionValue) {
+  // If not specified, return original string
+  if (!portionValue) {
+    return insertProperty(html, portionPropName, "");
+  }
+
+  portionValue = "(" + portionValue + ")";
+  html = insertProperty(html, portionPropName, portionValue);
+  return html;
+}
+
+
+global.$dc = dc;
+
+})(window);
